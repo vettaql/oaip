@@ -191,14 +191,15 @@ void Image5(HDC hdc, int cx, int cy) {
     hPen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));
     SelectObject(hdc, hPen);
 
-    POINT p[5] = {
+    POINT p[6] = {
         cx,      	cy,
         cx + 20,	cy - 20,
-        cx + 20,         cy + 20,
-        cx - 20, 	cy - 20,
-        cx,     	cy
+        cx + 20,    cy + 20,
+        cx - 20, 	cy + 20,
+        cx - 20,    cy - 20,
+        cx,         cy
     };
-    Polyline(hdc, p, 5);
+    Polyline(hdc, p, 6);
 
     DeleteObject(hPen);
 }

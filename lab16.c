@@ -9,10 +9,13 @@ int n = 0;
 void printElements();
 void keyboardInput();
 void oddsX10();
+void chetnXmin1();
+void zamenana4();
 int menshe10();
 int findMin();
 int findLastEven();
 int findIndexMin();
+
 
 
 void main() {
@@ -31,6 +34,8 @@ void main() {
 		printf("4: Сколько элементов <10\n");
 		printf("5: x2 для последнего чётного\n");
 		printf("6: Сколько чётных левее минимального\n");
+		printf("7: Все четные элементы массива умножить на -1\n");
+		printf("8: Все элементы массива имеющие значения меньше 4 заменить на 4\n");
 		printf("\n");
 		printf("0: Выйти из программы\n");
 		printf("Выбранная операция >>>>>> ");
@@ -81,8 +86,17 @@ void main() {
 				}
 				printf("Левее минимального %d четных элементов\n", cnt);
 			}
-			break;
 		}
+		break;
+		
+		case 7:
+			chetnXmin1();
+			break;
+
+		case 8:
+			zamenana4();
+			break;
+		
 		}
 		
 
@@ -156,4 +170,17 @@ int findIndexMin() {
 	}
 	return indexMin;
 }
-
+void chetnXmin1() {
+	for (int i = 0; i < n; i++) {
+		if (arr[i] % 2 == 0) {
+			arr[i] = arr[i] * (-1);
+		}
+	}
+}
+void zamenana4() {
+	for (int i = 0; i < n; i++) {
+		if (arr[i] < 4) {
+			arr[i] = 4;
+		}
+	}
+}
